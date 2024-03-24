@@ -13,3 +13,5 @@ const styles = StyleSheet.apply({
     alignItems: "center",
   },
 });
+
+export default Header;
