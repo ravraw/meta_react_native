@@ -4,18 +4,21 @@ import { Text, StyleSheet, View } from "react-native";
 const MenuItem = ({ name }) => {
   return (
     <View style={styles.container}>
-      <Text>{name}</Text>
+      <Text style={styles.text}>{name}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: "90%",
+    flexDirection: "row",
     padding: 10,
     margin: 5,
     backgroundColor: "#fff",
+    borderRadius: 10,
+  },
+  text: {
+    width: "100%",
   },
 });
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList, Text } from "react-native";
 import MenuItem from "./MenuItem";
 
 const menuItemsToDisplay = [
@@ -33,6 +33,7 @@ const keyExtractor = (item) => item.id;
 
 const MenuItemsList = () => (
   <View style={styles.container}>
+    <Text style={styles.subheading}>Menu Items</Text>
     <FlatList
       data={menuItemsToDisplay}
       renderItem={renderItem}
@@ -44,15 +45,13 @@ const MenuItemsList = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+    width: "90%",
   },
   subheading: {
     color: "white",
     fontSize: 40,
     flexWrap: "wrap",
-  },
-  menuItem: {
-    color: "#F4CE14",
-    fontSize: 36,
   },
 });
 
