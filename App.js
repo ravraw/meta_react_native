@@ -18,10 +18,10 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 40,
+    backgroundColor: "#4c6258",
   },
 });
 
