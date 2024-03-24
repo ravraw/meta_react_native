@@ -1,24 +1,26 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 
-const MenuItem = ({ name }) => {
+const MenuItem = ({ name, price }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{name}</Text>
+      <Text style={styles.text}>{price}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    // flex: 1,
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignSelf: "center",
     padding: 10,
-    margin: 5,
+    margin: 10,
     backgroundColor: "#fff",
     borderRadius: 10,
-  },
-  text: {
-    width: "100%",
+    width: "90%",
   },
 });
 
