@@ -1,23 +1,28 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import { Header } from "react-native/Libraries/NewAppScreen";
+import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header />
-      <Text>Welcome to Little Lemon</Text>
+      {/* <Text>Welcome to Little Lemon</Text> */}
       <Footer />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#495E57",
+    backgroundColor: "#FFF",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    marginTop: 40,
   },
 });
+
+export default App;

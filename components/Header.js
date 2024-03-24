@@ -1,16 +1,19 @@
-const { View, StyleSheet } = require("react-native");
+const { View, StyleSheet, Text } = require("react-native");
 
-const Header = () => {
+const Header = () => (
   <View style={styles.wrapper}>
     <Text>Little Lemon</Text>
-  </View>;
-};
+  </View>
+);
 
-const styles = StyleSheet.apply({
+const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: "yellow",
-    padding: 10,
+    backgroundColor: "#F4CE14",
+    borderColor: "blue",
+    borderWidth: 1,
+    borderStyle: "solid",
     alignItems: "center",
+    width: "100%",
   },
 });
 
