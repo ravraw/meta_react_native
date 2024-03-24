@@ -4,14 +4,14 @@ import { StyleSheet, View, Text, SafeAreaView } from "react-native";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WelcomeScreen from "./screens/WelcomeScreen";
-import MenuItems from "./components/MenuItems";
+import MenuItemsList from "./components/MenuItemsList";
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <WelcomeScreen />
-      {/* <MenuItems /> */}
+      {/* <WelcomeScreen /> */}
+      <MenuItemsList />
       <Footer />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
