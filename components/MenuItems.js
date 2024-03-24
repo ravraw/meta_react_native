@@ -9,7 +9,7 @@ const menuItemsToDisplay = [
 const MenuItems = () => {
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView indicatorStyle="white" style={styles.scrollView}>
         <Text style={styles.subheading}>View Menu</Text>
         <Text style={styles.menuItem}>{menuItemsToDisplay[0]}</Text>
       </ScrollView>

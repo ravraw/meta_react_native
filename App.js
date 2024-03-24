@@ -10,8 +10,8 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      {/* <WelcomeScreen /> */}
-      <MenuItems />
+      <WelcomeScreen />
+      {/* <MenuItems /> */}
       <Footer />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     backgroundColor: "#4c6258",
+    paddingTop: StatusBar.currentHeight,
   },
 });
 
