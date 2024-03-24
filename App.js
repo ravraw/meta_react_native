@@ -8,7 +8,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      {/* <Text>Welcome to Little Lemon</Text> */}
+      <Text>Welcome to Little Lemon</Text>
       <Footer />
       <StatusBar style="auto" />
     </SafeAreaView>

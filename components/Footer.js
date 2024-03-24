@@ -8,12 +8,11 @@ const Footer = () => (
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: "#F4CE14",
-    borderColor: "blue",
-    borderWidth: 1,
-    borderStyle: "solid",
     alignItems: "center",
+    justifyContent: "center",
     width: "100%",
+    height: 50,
+    backgroundColor: "#F4CE14",
   },
 });
 
