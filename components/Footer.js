@@ -10,14 +10,14 @@ const Footer = () => (
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 0.1,
+    flex: 0.05,
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
     backgroundColor: "#F4CE14",
   },
   content: {
-    fontSize: 16,
+    fontSize: 12,
   },
 });
 
