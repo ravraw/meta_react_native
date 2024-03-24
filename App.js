@@ -3,14 +3,15 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text, SafeAreaView } from "react-native";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import WelcomeScreen from "./screens/WelcomeScreen";
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <Text>Welcome to Little Lemon</Text>
+      <WelcomeScreen />
       <Footer />
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
   );
 };
@@ -20,7 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 40,
     backgroundColor: "#4c6258",
   },
 });
