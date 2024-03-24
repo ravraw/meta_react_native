@@ -8,20 +8,16 @@ const menuItemsToDisplay = [
 
 const MenuItems = () => {
   return (
-    <View style={styles.container}>
-      <ScrollView indicatorStyle="white" style={styles.scrollView}>
-        <Text style={styles.subheading}>View Menu</Text>
-        <Text style={styles.menuItem}>{menuItemsToDisplay[0]}</Text>
-      </ScrollView>
-    </View>
+    <ScrollView indicatorStyle="white" style={styles.scrollView}>
+      <Text style={styles.subheading}>View Menu</Text>
+      <Text style={styles.menuItem}>{menuItemsToDisplay[0]}</Text>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   scrollView: {
+    flex: 1,
     paddingHorizontal: 40,
     paddingVertical: 40,
     backgroundColor: "black",
