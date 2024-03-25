@@ -1,43 +1,60 @@
 import React, { useState } from "react";
 
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 
 const FeedbackForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  console.log({ name, email, message });
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.headingSection}>
-        {" "}
-        How was your visit to Little Lemon?{" "}
-      </Text>
-      <Text style={styles.infoSection}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear your experience with us!
-      </Text>
-      <View>
-        <TextInput
-          value={name}
-          placeholder="Name"
-          onChangeText={setName}
-          style={styles.nameEmailInput}
-        />
-        <TextInput
-          value={email}
-          placeholder="Email"
-          onChangeText={setEmail}
-          style={styles.nameEmailInput}
-        />
-        <TextInput
-          value={message}
-          placeholder="Message"
-          onChangeText={setMessage}
-          style={styles.messageInput}
-        />
-      </View>
+    <ScrollView
+      style={styles.container}
+      //  keyboardDismissMode="on-drag"
+    >
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === "ios" ? "padding" : "padding"}
+        paddingBottom={Platform.OS === "ios" ? 100 : 0}
+      >
+        <Text style={styles.headingSection}>
+          {" "}
+          How was your visit to Little Lemon?{" "}
+        </Text>
+        <Text style={styles.infoSection}>
+          Little Lemon is a charming neighborhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. We would
+          love to hear your experience with us!
+        </Text>
+        <View>
+          <TextInput
+            value={name}
+            placeholder="Name"
+            onChangeText={setName}
+            style={styles.nameEmailInput}
+          />
+          <TextInput
+            value={email}
+            placeholder="Email"
+            onChangeText={setEmail}
+            style={styles.nameEmailInput}
+          />
+          <TextInput
+            value={message}
+            placeholder="Message"
+            onChangeText={setMessage}
+            style={styles.messageInput}
+          />
+        </View>
+      </KeyboardAvoidingView>
     </ScrollView>
   );
 };
@@ -68,7 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     fontSize: 16,
-    borderColor: "EDEFEE",
+    borderColor: "#EDEFEE",
     backgroundColor: "#F4CE14",
   },
   messageInput: {
