@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import {
   Keyboard,
-  KeyboardAvoidingView,
   Platform,
   ScrollView,
   StyleSheet,
@@ -10,8 +9,9 @@ import {
   TextInput,
   View,
 } from "react-native";
+import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
-const FeedbackForm = () => {
+const FeedbackScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -36,8 +36,7 @@ const FeedbackForm = () => {
   // }, []);
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
+    <KeyboardAvoidingElement
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       // keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0}
     >
@@ -75,15 +74,15 @@ const FeedbackForm = () => {
           />
           <TextInput
             value={message}
-            placeholder="Message"
+            placeholder="please leave feedback"
             onChangeText={setMessage}
             style={styles.messageInput}
             multiline={true}
-            maxLength={500}
+            maxLength={250}
           />
         </View>
       </ScrollView>
-    </KeyboardAvoidingView>
+    </KeyboardAvoidingElement>
   );
 };
 
@@ -136,4 +135,4 @@ const styles = StyleSheet.create({
   inputContainer: {},
 });
 
-export default FeedbackForm;
+export default FeedbackScreen;
