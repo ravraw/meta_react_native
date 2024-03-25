@@ -6,7 +6,7 @@ const LoginScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setpassword] = useState("");
   return (
-    <KeyboardAvoidingElement style={styles.container}>
+    <KeyboardAvoidingElement>
       <View style={styles.headingContainer}>
         <Text style={styles.headerText}>Welcome</Text>
         <Text style={styles.headerText}>to</Text>
@@ -32,13 +32,13 @@ const LoginScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "flex-start",
-    alignContent: "center",
-    width: "100%",
-    paddingHorizontal: 10,
-  },
+  // container: {
+  //   flex: 1,
+  //   justifyContent: "flex-start",
+  //   alignContent: "center",
+  //   width: "100%",
+  //   paddingHorizontal: 10,
+  // },
   headingContainer: {
     padding: 20,
     justifyContent: "flex-start",

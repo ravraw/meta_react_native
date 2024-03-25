@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import {
-  Keyboard,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
 const FeedbackScreen = () => {
@@ -17,29 +9,8 @@ const FeedbackScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
 
-  const [keyboardHeight, setKeyboardHeight] = useState(0);
-
-  // Not being used
-  // useEffect(() => {
-  //   const showSubscription = Keyboard.addListener(
-  //     "keyboardDidShow",
-  //     ({ endCoordinates }) => setKeyboardHeight(endCoordinates.height)
-  //   );
-  //   const hideSubscription = Keyboard.addListener("keyboardDidHide", () =>
-  //     setKeyboardHeight(0)
-  //   );
-
-  //   return () => {
-  //     showSubscription.remove();
-  //     hideSubscription.remove();
-  //   };
-  // }, []);
-
   return (
-    <KeyboardAvoidingElement
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      // keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0}
-    >
+    <KeyboardAvoidingElement>
       <ScrollView style={styles.container} keyboardDismissMode="on-drag">
         <Text style={styles.headingSection}>
           How was your visit to Little Lemon?
@@ -87,9 +58,9 @@ const FeedbackScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  // container: {
+  //   flex: 1,
+  // },
   infoSection: {
     fontSize: 24,
     padding: 20,
