@@ -5,13 +5,15 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import MenuItemsList from "./components/MenuItemsList";
+import FeedbackForm from "./components/FeedbackForm";
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
+      <FeedbackForm />
       {/* <WelcomeScreen /> */}
-      <MenuItemsList />
+      {/* <MenuItemsList /> */}
       <Footer />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
