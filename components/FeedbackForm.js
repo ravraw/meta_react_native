@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Keyboard,
@@ -15,19 +15,33 @@ const FeedbackForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [keyboardHeight, setKeyboardHeight] = useState(0);
+
+  // Not being used
+  // useEffect(() => {
+  //   const showSubscription = Keyboard.addListener(
+  //     "keyboardDidShow",
+  //     ({ endCoordinates }) => setKeyboardHeight(endCoordinates.height)
+  //   );
+  //   const hideSubscription = Keyboard.addListener("keyboardDidHide", () =>
+  //     setKeyboardHeight(0)
+  //   );
+
+  //   return () => {
+  //     showSubscription.remove();
+  //     hideSubscription.remove();
+  //   };
+  // }, []);
+
   return (
-    <ScrollView
+    <KeyboardAvoidingView
       style={styles.container}
-      //  keyboardDismissMode="on-drag"
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      // keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0}
     >
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior={Platform.OS === "ios" ? "padding" : "padding"}
-        paddingBottom={Platform.OS === "ios" ? 100 : 0}
-      >
+      <ScrollView style={styles.container} keyboardDismissMode="on-drag">
         <Text style={styles.headingSection}>
-          {" "}
-          How was your visit to Little Lemon?{" "}
+          How was your visit to Little Lemon?
         </Text>
         <Text style={styles.infoSection}>
           Little Lemon is a charming neighborhood bistro that serves simple food
@@ -54,8 +68,8 @@ const FeedbackForm = () => {
             style={styles.messageInput}
           />
         </View>
-      </KeyboardAvoidingView>
-    </ScrollView>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
