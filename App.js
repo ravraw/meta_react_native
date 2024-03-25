@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WelcomeScreen from "./screens/WelcomeScreen";
