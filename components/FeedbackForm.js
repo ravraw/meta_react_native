@@ -14,7 +14,9 @@ import {
 const FeedbackForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+
   const [keyboardHeight, setKeyboardHeight] = useState(0);
 
   // Not being used
@@ -54,18 +56,30 @@ const FeedbackForm = () => {
             placeholder="Name"
             onChangeText={setName}
             style={styles.nameEmailInput}
+            maxLength={50}
           />
           <TextInput
             value={email}
             placeholder="Email"
             onChangeText={setEmail}
             style={styles.nameEmailInput}
+            maxLength={50}
+            keyboardType={"email-address"}
+          />
+          <TextInput
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+            placeholder={"Phone Number"}
+            style={styles.phoneNumberInput}
+            keyboardType={"phone-pad"}
           />
           <TextInput
             value={message}
             placeholder="Message"
             onChangeText={setMessage}
             style={styles.messageInput}
+            multiline={true}
+            maxLength={500}
           />
         </View>
       </ScrollView>
@@ -94,6 +108,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#495E57",
   },
   nameEmailInput: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    fontSize: 16,
+    borderColor: "#EDEFEE",
+    backgroundColor: "#F4CE14",
+  },
+  phoneNumberInput: {
     height: 40,
     margin: 12,
     borderWidth: 1,
