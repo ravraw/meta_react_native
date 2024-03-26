@@ -15,12 +15,17 @@ const WelcomeScreen = () => {
         style={styles.backgroundImage}
         source={require("../assets/images/backgroundImage.png")}
       >
-        <Text style={styles.title}>
-          Little Lemon, Your local Mediterranean Bistro
-        </Text>
-        <Pressable onPress={() => setShowMenu(!showMenu)} style={styles.button}>
-          <Text style={styles.buttonText}>Menu</Text>
-        </Pressable>
+        <View style={styles.contentWrapper}>
+          <Text style={styles.title}>
+            Little Lemon, Your local Mediterranean Bistro
+          </Text>
+          <Pressable
+            onPress={() => navigation.navigation("Menu")}
+            style={styles.button}
+          >
+            <Text style={styles.buttonText}>Menu</Text>
+          </Pressable>
+        </View>
       </ImageBackground>
       {/* </View> */}
     </View>
@@ -37,8 +42,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     resizeMode: "contain",
   },
+  contentWrapper: {
+    marginTop: 50,
+    width: "100%",
+    alignItems: "center",
+  },
   title: {
-    marginTop: 16,
     paddingVertical: 10,
     color: "#333333",
     textAlign: "center",
@@ -48,12 +57,13 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   button: {
+    width: 100,
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 175,
     backgroundColor: "#4c6258",
     borderColor: "#EDEFEE",
-    borderWidth: 2,
+    // borderWidth: 2,
     borderRadius: 12,
   },
   buttonText: {

@@ -52,8 +52,6 @@ const styles = StyleSheet.create({
   formContainer: {
     flex: 1,
     justifyContent: "center",
-    // borderWidth: 1,
-    // borderColor: "red",
   },
   regularText: {
     fontSize: 18,
