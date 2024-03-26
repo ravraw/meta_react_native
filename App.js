@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView, Pressable } from "react-native";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WelcomeScreen from "./screens/WelcomeScreen";
@@ -13,9 +13,9 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Header />
       {/* <FeedbackScreen /> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
       {/* <WelcomeScreen /> */}
-      {/* <MenuItemsList /> */}
+      <MenuItemsList />
       <Footer />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>

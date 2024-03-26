@@ -4,7 +4,7 @@ import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");
-  const [password, setpassword] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <KeyboardAvoidingElement>
       <View style={styles.headingContainer}>
@@ -15,16 +15,23 @@ const LoginScreen = () => {
       <View>
         <Text style={styles.regularText}>Login to continue </Text>
         <TextInput
+          value={username}
+          onChangeText={setUsername}
           placeholder="email / username"
           maxLength={50}
           keyboardType="email-address"
           style={styles.username}
+          clearButtonMode="always"
         />
         <TextInput
-          style={styles.password}
+          value={password}
+          onChangeText={setPassword}
           placeholder="Password"
           maxLength={14}
+          keyboardType={"default"}
           secureTextEntry={true}
+          style={styles.password}
+          clearButtonMode="always"
         />
       </View>
     </KeyboardAvoidingElement>
@@ -32,13 +39,6 @@ const LoginScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   justifyContent: "flex-start",
-  //   alignContent: "center",
-  //   width: "100%",
-  //   paddingHorizontal: 10,
-  // },
   headingContainer: {
     padding: 20,
     justifyContent: "flex-start",

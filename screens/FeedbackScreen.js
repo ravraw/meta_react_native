@@ -27,6 +27,7 @@ const FeedbackScreen = () => {
             onChangeText={setName}
             style={styles.nameEmailInput}
             maxLength={50}
+            clearButtonMode="always"
           />
           <TextInput
             value={email}
@@ -35,6 +36,7 @@ const FeedbackScreen = () => {
             style={styles.nameEmailInput}
             maxLength={50}
             keyboardType={"email-address"}
+            clearButtonMode="always"
           />
           <TextInput
             value={phoneNumber}
@@ -42,6 +44,7 @@ const FeedbackScreen = () => {
             placeholder={"Phone Number"}
             style={styles.phoneNumberInput}
             keyboardType={"phone-pad"}
+            clearButtonMode="always"
           />
           <TextInput
             value={message}
@@ -50,6 +53,7 @@ const FeedbackScreen = () => {
             style={styles.messageInput}
             multiline={true}
             maxLength={250}
+            clearButtonMode="always"
           />
         </View>
       </ScrollView>

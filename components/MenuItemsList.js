@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, SectionList, Text } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, SectionList, Text, Pressable } from "react-native";
 import MenuItem from "./MenuItem";
 
 const menuItemsToDisplay = [
@@ -56,23 +56,33 @@ const renderSectionHeader = ({ section: { title } }) => (
 );
 const keyExtractor = (item, i) => item + i;
 
-const MenuItemsList = () => (
-  <View style={styles.container}>
-    <SectionList
-      sections={menuItemsToDisplay}
-      renderItem={renderItem}
-      keyExtractor={keyExtractor}
-      renderSectionHeader={renderSectionHeader}
-      ListHeaderComponent={() => <Text style={styles.subheading}> MENU </Text>}
-      ListFooterComponent={() => <Text>"--------- END -----------"</Text>}
-    />
-  </View>
-);
+const MenuItemsList = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  return (
+    <View style={styles.container}>
+      <Pressable onPress={() => setShowMenu(!showMenu)} style={styles.button}>
+        <Text style={styles.buttonText}>{showMenu ? "Home" : "Show Menu"}</Text>
+      </Pressable>
+      {showMenu && (
+        <SectionList
+          sections={menuItemsToDisplay}
+          renderItem={renderItem}
+          keyExtractor={keyExtractor}
+          renderSectionHeader={renderSectionHeader}
+          ListHeaderComponent={() => (
+            <Text style={styles.subheading}> MENU </Text>
+          )}
+          ListFooterComponent={() => <Text>"--------- END -----------"</Text>}
+        />
+      )}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     margin: 20,
     // width: "100%",
   },
@@ -89,6 +99,20 @@ const styles = StyleSheet.create({
     fontSize: 24,
     flexWrap: "wrap",
     margin: 15,
+  },
+  button: {
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: "#EDEFEE",
+    borderColor: "#EDEFEE",
+    borderWidth: 2,
+    borderRadius: 12,
+  },
+  buttonText: {
+    color: "#333333",
+    textAlign: "center",
+    fontSize: 18,
   },
 });
 
