@@ -14,9 +14,8 @@ const WelcomeScreen = ({ navigation }) => {
         source={require("../assets/images/backgroundImage.png")}
       >
         <View style={styles.contentWrapper}>
-          <Text style={styles.title}>
-            Little Lemon, Your local Mediterranean Bistro
-          </Text>
+          <Text style={styles.title}>Little Lemon</Text>
+          <Text style={styles.subtitle}>Your local Mediterranean Bistro</Text>
           <Pressable
             onPress={() => navigation.navigate("Menu", {})}
             style={styles.button}
@@ -45,10 +44,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    paddingVertical: 10,
+    paddingVertical: 5,
     color: "#333333",
     textAlign: "center",
     fontSize: 20,
+    fontWeight: "bold",
+    width: "50%",
+    alignSelf: "center",
+  },
+  subtitle: {
+    paddingVertical: 10,
+    color: "#333333",
+    textAlign: "center",
+    fontSize: 15,
     fontWeight: "bold",
     width: "50%",
     alignSelf: "center",

@@ -24,9 +24,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const { Navigator, Screen } = createNativeStackNavigator();
 
 const App = () => {
-  // const { width, height, fontScale } = useWindowDimensions();
-  // const orientation = useDeviceOrientation();
-  // const deviceStatus = useAppState();
   const colorScheme = useColorScheme();
 
   return (
@@ -37,16 +34,14 @@ const App = () => {
           { backgroundColor: colorScheme === "light" ? "#FFF" : "#333333" },
         ]}
       >
-        {/* <View style={styles.container}> */}
-        <Header />
         <Navigator
           initialRouteName="Welcome"
-          // screenOptions={{
-          //   headerStyle: { backgroundColor: "#FBDABB" },
-          // }}
+          screenOptions={{
+            headerStyle: { backgroundColor: "#F4CE14" },
+          }}
         >
           <Screen
-            options={{ title: "Home" }}
+            options={{ title: "Little lemon" }}
             name="Welcome"
             component={WelcomeScreen}
           />

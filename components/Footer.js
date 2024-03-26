@@ -10,7 +10,7 @@ const Footer = () => (
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 0.05,
+    flex: 0.06,
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
