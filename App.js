@@ -13,9 +13,9 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Header />
       {/* <FeedbackScreen /> */}
-      {/* <LoginScreen /> */}
+      <LoginScreen />
       {/* <WelcomeScreen /> */}
-      <MenuItemsList />
+      {/* <MenuItemsList /> */}
       <Footer />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
