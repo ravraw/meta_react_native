@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { TextInput, Text, StyleSheet, View, Pressable } from "react-native";
 import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
@@ -8,11 +8,6 @@ const LoginScreen = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <KeyboardAvoidingElement>
-      <View style={styles.headingContainer}>
-        <Text style={styles.headerText}>Welcome</Text>
-        <Text style={styles.headerText}>to</Text>
-        <Text style={styles.headerText}>Little Lemon</Text>
-      </View>
       <View style={styles.formContainer}>
         <Text style={styles.regularText}>
           {!loggedIn ? "Login to continue" : "You are logged in!"}{" "}
@@ -54,24 +49,16 @@ const LoginScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  headingContainer: {
-    padding: 20,
-    justifyContent: "flex-start",
-    marginBottom: 20,
-  },
   formContainer: {
-    justifyContent: "flex-start",
-  },
-  headerText: {
-    fontSize: 24,
-    color: "#EDEFEE",
-    textAlign: "center",
+    flex: 1,
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "red",
   },
   regularText: {
     fontSize: 18,
     padding: 20,
     marginVertical: 8,
-    color: "#EDEFEE",
     textAlign: "center",
   },
   username: {
@@ -99,13 +86,13 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 8,
     width: "50%",
-    backgroundColor: "#EDEFEE",
+    backgroundColor: "#4c6258",
     borderColor: "#EDEFEE",
     borderWidth: 2,
     borderRadius: 12,
   },
   buttonText: {
-    color: "#333333",
+    color: "#FFF",
     textAlign: "center",
     fontSize: 18,
   },

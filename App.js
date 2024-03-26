@@ -40,7 +40,7 @@ const App = () => {
         {/* <View style={styles.container}> */}
         <Header />
         <Navigator
-          initialRouteName="Welcome"
+          initialRouteName="Login"
           // screenOptions={{
           //   headerStyle: { backgroundColor: "#FBDABB" },
           // }}
