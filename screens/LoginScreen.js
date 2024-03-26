@@ -1,23 +1,32 @@
 import React, { useState } from "react";
-import { TextInput, Text, StyleSheet, View, Pressable } from "react-native";
+import {
+  TextInput,
+  Text,
+  StyleSheet,
+  View,
+  Pressable,
+  Image,
+} from "react-native";
 import KeyboardAvoidingElement from "../components/KeyboardAvoidingElement";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <KeyboardAvoidingElement>
       <View style={styles.formContainer}>
-        <Text style={styles.regularText}>
-          {!loggedIn ? "Login to continue" : "You are logged in!"}{" "}
-        </Text>
+        <Image
+          source={require("../assets/images/logo.png")}
+          style={styles.image}
+        />
         {!loggedIn && (
           <>
+            <Text style={styles.regularText}>Login / Signup</Text>
             <TextInput
               value={username}
               onChangeText={setUsername}
-              placeholder="email / username"
+              placeholder="Email"
               maxLength={50}
               keyboardType="email-address"
               style={styles.username}
@@ -35,9 +44,7 @@ const LoginScreen = () => {
             />
             <Pressable
               style={styles.button}
-              onPress={() => {
-                setLoggedIn(!loggedIn);
-              }}
+              onPress={() => navigation.navigate("Profile")}
             >
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
@@ -51,7 +58,15 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   formContainer: {
     flex: 1,
-    justifyContent: "center",
+  },
+  image: {
+    width: "90%",
+    height: 100,
+    resizeMode: "contain",
+    alignSelf: "center",
+    marginVertical: 50,
+    // borderWidth: 1,
+    // borderColor: "red",
   },
   regularText: {
     fontSize: 18,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -19,12 +19,15 @@ import {
   useAppState,
 } from "@react-native-community/hooks";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import ProfileScreen from "./screens/ProfileScreen";
 
-const { Navigator, Screen } = createNativeStackNavigator();
+const { Navigator, Screen } = createBottomTabNavigator();
 
 const App = () => {
   const colorScheme = useColorScheme();
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <NavigationContainer>
@@ -35,22 +38,26 @@ const App = () => {
         ]}
       >
         <Navigator
-          initialRouteName="Welcome"
+          initialRouteName="Login"
           screenOptions={{
             headerStyle: { backgroundColor: "#F4CE14" },
           }}
         >
           <Screen
-            options={{ title: "Little lemon" }}
+            options={{ title: "Home" }}
             name="Welcome"
             component={WelcomeScreen}
           />
           <Screen name="Menu" component={MenuItemsList} />
-          <Screen name="Login" component={LoginScreen} />
-          <Screen name="Feedback" component={FeedbackScreen} />
+          {/* <Screen name="Login" component={LoginScreen} /> */}
+          {/* <Screen name="Feedback" component={FeedbackScreen} /> */}
+          <Screen
+            name="Profile"
+            component={loggedIn ? ProfileScreen : LoginScreen}
+          />
         </Navigator>
         {/* </View> */}
-        <Footer />
+        {/* <Footer /> */}
       </SafeAreaView>
     </NavigationContainer>
   );
