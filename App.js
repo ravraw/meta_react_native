@@ -17,6 +17,7 @@ import {
   useDeviceOrientation,
   useAppState,
 } from "@react-native-community/hooks";
+import { NavigationContainer } from "@react-navigation/native";
 
 const App = () => {
   // const { width, height, fontScale } = useWindowDimensions();
@@ -24,20 +25,22 @@ const App = () => {
   // const deviceStatus = useAppState();
   const colorScheme = useColorScheme();
   return (
-    <SafeAreaView
-      style={[
-        styles.container,
-        { backgroundColor: colorScheme === "light" ? "#333333" : "#FFF" },
-      ]}
-    >
-      <Header />
-      {/* <FeedbackScreen /> */}
-      {/* <LoginScreen /> */}
-      <WelcomeScreen />
-      {/* <MenuItemsList /> */}
-      <Footer />
-      {/* <StatusBar style="auto" /> */}
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView
+        style={[
+          styles.container,
+          { backgroundColor: colorScheme === "light" ? "#333333" : "#FFF" },
+        ]}
+      >
+        <Header />
+        {/* <FeedbackScreen /> */}
+        {/* <LoginScreen /> */}
+        {/* <WelcomeScreen /> */}
+        {/* <MenuItemsList /> */}
+        <Footer />
+        {/* <StatusBar style="auto" /> */}
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
