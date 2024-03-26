@@ -6,6 +6,7 @@ import {
   Pressable,
   useWindowDimensions,
   useColorScheme,
+  View,
 } from "react-native";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -33,19 +34,27 @@ const App = () => {
       <SafeAreaView
         style={[
           styles.container,
-          { backgroundColor: colorScheme === "light" ? "#333333" : "#FFF" },
+          { backgroundColor: colorScheme === "light" ? "#FFF" : "#333333" },
         ]}
       >
+        {/* <View style={styles.container}> */}
         <Header />
-        <Navigator initialRouteName="Welcome">
-          <Screen name="Welcome" component={WelcomeScreen} />
+        <Navigator
+          initialRouteName="Welcome"
+          // screenOptions={{
+          //   headerStyle: { backgroundColor: "#FBDABB" },
+          // }}
+        >
+          <Screen
+            options={{ title: "Home" }}
+            name="Welcome"
+            component={WelcomeScreen}
+          />
           <Screen name="Menu" component={MenuItemsList} />
-          {/* <FeedbackScreen /> */}
-          {/* <LoginScreen /> */}
-          {/* <WelcomeScreen /> */}
-          {/* <MenuItemsList /> */}
-          {/* <StatusBar style="auto" /> */}
+          <Screen name="Login" component={LoginScreen} />
+          <Screen name="Feedback" component={FeedbackScreen} />
         </Navigator>
+        {/* </View> */}
         <Footer />
       </SafeAreaView>
     </NavigationContainer>
@@ -55,10 +64,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "#4c6258",
-    paddingTop: StatusBar.currentHeight,
   },
 });
 

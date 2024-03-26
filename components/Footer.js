@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    backgroundColor: "#FFF",
+    backgroundColor: "#F4CE14",
   },
   content: {
     fontSize: 12,
+    color: "#4c6258",
+    fontWeight: "bold",
   },
 });
 
