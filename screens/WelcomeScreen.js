@@ -1,34 +1,47 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  ImageBackground,
+} from "react-native";
 
 const WelcomeScreen = () => {
   return (
-    <ScrollView indicatorStyle="white" style={styles.scrollView}>
-      <Text style={styles.heading}>Welcome to Little Lemon</Text>
-      <Text style={styles.subheading}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear more about your experience with us!
-      </Text>
-    </ScrollView>
+    <View indicatorStyle="white" style={styles.container}>
+      {/* <View style={styles.container}> */}
+      <ImageBackground
+        style={styles.backgroundImage}
+        source={require("../assets/images/backgroundImage.png")}
+      >
+        <Text style={styles.title}>
+          Little Lemon, your local Mediterranean Bistro
+        </Text>
+      </ImageBackground>
+      {/* </View> */}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
+  container: {
     flex: 1,
+    backgroundColor: "#FFF",
   },
-  heading: {
-    padding: 40,
-    fontSize: 30,
-    color: "#EDEFEE",
-    textAlign: "center",
+  backgroundImage: {
+    flex: 1,
+    justifyContent: "center",
+    resizeMode: "contain",
   },
-  subheading: {
-    fontSize: 24,
-    padding: 20,
-    marginVertical: 8,
-    color: "#EDEFEE",
+  title: {
+    marginTop: 16,
+    paddingVertical: 10,
+    color: "#333333",
     textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    width: "50%",
+    alignSelf: "center",
   },
 });
 

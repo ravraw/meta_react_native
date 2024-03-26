@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderColor: "#EDEFEE",
     backgroundColor: "#F4CE14",
+    borderRadius: 5,
   },
   password: {
     height: 50,
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderColor: "#EDEFEE",
     backgroundColor: "#F4CE14",
+    borderRadius: 5,
   },
   button: {
     alignSelf: "center",

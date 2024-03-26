@@ -13,8 +13,8 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Header />
       {/* <FeedbackScreen /> */}
-      <LoginScreen />
-      {/* <WelcomeScreen /> */}
+      {/* <LoginScreen /> */}
+      <WelcomeScreen />
       {/* <MenuItemsList /> */}
       <Footer />
       {/* <StatusBar style="auto" /> */}
