@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ScrollView,
   ImageBackground,
+  Pressable,
 } from "react-native";
 
 const WelcomeScreen = () => {
@@ -15,8 +16,11 @@ const WelcomeScreen = () => {
         source={require("../assets/images/backgroundImage.png")}
       >
         <Text style={styles.title}>
-          Little Lemon, your local Mediterranean Bistro
+          Little Lemon, Your local Mediterranean Bistro
         </Text>
+        <Pressable onPress={() => setShowMenu(!showMenu)} style={styles.button}>
+          <Text style={styles.buttonText}>Menu</Text>
+        </Pressable>
       </ImageBackground>
       {/* </View> */}
     </View>
@@ -42,6 +46,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     width: "50%",
     alignSelf: "center",
+  },
+  button: {
+    padding: 10,
+    marginVertical: 8,
+    marginHorizontal: 175,
+    backgroundColor: "#4c6258",
+    borderColor: "#EDEFEE",
+    borderWidth: 2,
+    borderRadius: 12,
+  },
+  buttonText: {
+    color: "#FFF",
+    textAlign: "center",
+    fontSize: 18,
   },
 });
 
