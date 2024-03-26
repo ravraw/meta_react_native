@@ -18,12 +18,16 @@ import {
   useAppState,
 } from "@react-native-community/hooks";
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const { Navigator, Screen } = createNativeStackNavigator();
 
 const App = () => {
   // const { width, height, fontScale } = useWindowDimensions();
   // const orientation = useDeviceOrientation();
   // const deviceStatus = useAppState();
   const colorScheme = useColorScheme();
+
   return (
     <NavigationContainer>
       <SafeAreaView
@@ -33,12 +37,16 @@ const App = () => {
         ]}
       >
         <Header />
-        {/* <FeedbackScreen /> */}
-        {/* <LoginScreen /> */}
-        {/* <WelcomeScreen /> */}
-        {/* <MenuItemsList /> */}
+        <Navigator initialRouteName="Welcome">
+          <Screen name="Welcome" component={WelcomeScreen} />
+          <Screen name="Menu" component={MenuItemsList} />
+          {/* <FeedbackScreen /> */}
+          {/* <LoginScreen /> */}
+          {/* <WelcomeScreen /> */}
+          {/* <MenuItemsList /> */}
+          {/* <StatusBar style="auto" /> */}
+        </Navigator>
         <Footer />
-        {/* <StatusBar style="auto" /> */}
       </SafeAreaView>
     </NavigationContainer>
   );
