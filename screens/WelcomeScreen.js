@@ -2,15 +2,13 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   ImageBackground,
   Pressable,
 } from "react-native";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <View indicatorStyle="white" style={styles.container}>
-      {/* <View style={styles.container}> */}
       <ImageBackground
         style={styles.backgroundImage}
         source={require("../assets/images/backgroundImage.png")}
@@ -20,14 +18,13 @@ const WelcomeScreen = () => {
             Little Lemon, Your local Mediterranean Bistro
           </Text>
           <Pressable
-            onPress={() => navigation.navigation("Menu")}
+            onPress={() => navigation.navigate("Menu", {})}
             style={styles.button}
           >
             <Text style={styles.buttonText}>Menu</Text>
           </Pressable>
         </View>
       </ImageBackground>
-      {/* </View> */}
     </View>
   );
 };

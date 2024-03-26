@@ -60,21 +60,21 @@ const MenuItemsList = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => setShowMenu(!showMenu)} style={styles.button}>
+      {/* <Pressable onPress={() => setShowMenu(!showMenu)} style={styles.button}>
         <Text style={styles.buttonText}>{showMenu ? "Home" : "Show Menu"}</Text>
-      </Pressable>
-      {showMenu && (
-        <SectionList
-          sections={menuItemsToDisplay}
-          renderItem={renderItem}
-          keyExtractor={keyExtractor}
-          renderSectionHeader={renderSectionHeader}
-          ListHeaderComponent={() => (
-            <Text style={styles.subheading}> MENU </Text>
-          )}
-          ListFooterComponent={() => <Text>"--------- END -----------"</Text>}
-        />
-      )}
+      </Pressable> */}
+      {/* {showMenu && ( */}
+      <SectionList
+        sections={menuItemsToDisplay}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        renderSectionHeader={renderSectionHeader}
+        ListHeaderComponent={() => (
+          <Text style={styles.subheading}> MENU </Text>
+        )}
+        ListFooterComponent={() => <Text>"--------- END -----------"</Text>}
+      />
+      {/* )} */}
     </View>
   );
 };
@@ -84,18 +84,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     margin: 20,
-    // width: "100%",
   },
   subheading: {
     textAlign: "center",
-    color: "white",
     fontSize: 32,
     flexWrap: "wrap",
     marginBottom: 15,
   },
   sectionHeading: {
     textAlign: "center",
-    color: "white",
     fontSize: 24,
     flexWrap: "wrap",
     margin: 15,
