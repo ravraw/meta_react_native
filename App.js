@@ -6,22 +6,16 @@ import {
 } from "@react-native-community/hooks";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigator from "./screens/TabNavigator";
+import WelcomeScreen from "./screens/WelcomeScreen";
 
 const App = () => {
   const colorScheme = useColorScheme();
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
-    <NavigationContainer>
-      <SafeAreaView
-        style={[
-          styles.container,
-          { backgroundColor: colorScheme === "light" ? "#FFF" : "#333333" },
-        ]}
-      >
-        <TabNavigator />
-      </SafeAreaView>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <TabNavigator />
+    </View>
   );
 };
 
