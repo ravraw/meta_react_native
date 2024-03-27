@@ -5,12 +5,7 @@ import {
   useAppState,
 } from "@react-native-community/hooks";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ProfileScreen from "./screens/ProfileScreen";
-
-const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+import TabNavigator from "./screens/TabNavigator";
 
 const App = () => {
   const colorScheme = useColorScheme();
@@ -24,7 +19,7 @@ const App = () => {
           { backgroundColor: colorScheme === "light" ? "#FFF" : "#333333" },
         ]}
       >
-        {}
+        <TabNavigator />
       </SafeAreaView>
     </NavigationContainer>
   );

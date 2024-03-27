@@ -1,14 +1,15 @@
 import React from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import WelcomeScreen from "../screens/WelcomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import MenuItemsList from "../screens/MenuItemsList";
-import LoginScreen from "../screens/LoginScreen";
-const { Navigator, Screen } = createNativeStackNavigator();
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import WelcomeScreen from "./WelcomeScreen";
+import ProfileScreen from "./ProfileScreen";
+import MenuItemsList from "../components/MenuItemsList";
+import LoginScreen from "./LoginScreen";
+import FeedbackScreen from "./FeedbackScreen";
+const { Navigator, Screen } = createBottomTabNavigator();
 
-const StackNavigator = () => {
+const TabNavigator = () => {
   <NavigationContainer>
     <Navigator>
       <Screen
@@ -21,5 +22,8 @@ const StackNavigator = () => {
       <Screen name="Feedback" component={FeedbackScreen} />
       <Screen name="Profile" component={ProfileScreen} />
     </Navigator>
+    ;
   </NavigationContainer>;
 };
+
+export default TabNavigator;

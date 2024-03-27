@@ -1,12 +1,12 @@
 import React from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import WelcomeScreen from "../screens/WelcomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import MenuItemsList from "../screens/MenuItemsList";
-import LoginScreen from "../screens/LoginScreen";
-const { Navigator, Screen } = createBottomTabNavigator();
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import WelcomeScreen from "./WelcomeScreen";
+import ProfileScreen from "./ProfileScreen";
+import MenuItemsList from "../components/MenuItemsList";
+import LoginScreen from "./LoginScreen";
+const { Navigator, Screen } = createNativeStackNavigator();
 
 const StackNavigator = () => {
   <NavigationContainer>
@@ -23,3 +23,5 @@ const StackNavigator = () => {
     </Navigator>
   </NavigationContainer>;
 };
+
+export default StackNavigator;
