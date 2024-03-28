@@ -27,8 +27,8 @@ const TabNavigator = () => {
             component={WelcomeScreen}
           />
           <Screen name="Menu" component={MenuItemsList} />
-          <Screen name="Login" component={LoginScreen} />
-          <Screen name="Feedback" component={FeedbackScreen} />
+          {/* <Screen name="Login" component={LoginScreen} />
+          <Screen name="Feedback" component={FeedbackScreen} /> */}
           <Screen name="Profile" component={ProfileScreen} />
         </Navigator>
       </NavigationContainer>

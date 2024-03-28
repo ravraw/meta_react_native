@@ -6,6 +6,7 @@ import WelcomeScreen from "./WelcomeScreen";
 import ProfileScreen from "./ProfileScreen";
 import MenuItemsList from "../components/MenuItemsList";
 import LoginScreen from "./LoginScreen";
+import FeedbackScreen from "./FeedbackScreen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
