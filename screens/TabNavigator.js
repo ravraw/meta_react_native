@@ -7,7 +7,7 @@ import ProfileScreen from "./ProfileScreen";
 import MenuItemsList from "../components/MenuItemsList";
 import LoginScreen from "./LoginScreen";
 import FeedbackScreen from "./FeedbackScreen";
-
+import { Ionicons } from "@expo/vector-icons";
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const TabNavigator = () => {
@@ -20,7 +20,24 @@ const TabNavigator = () => {
       ]}
     >
       <NavigationContainer>
-        <Navigator>
+        <Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+
+              if (route.name === "Welcome") {
+                iconName = focused ? "home" : "home-outline";
+              } else if (route.name === "Menu") {
+                iconName = focused ? "menu" : "menu-outline";
+              } else if (route.name === "Profile") {
+                iconName = focused ? "person" : "person-outline";
+              }
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+            tabBarActiveTintColor: "#4c6258",
+            tabBarInactiveTintColor: "gray",
+          })}
+        >
           <Screen
             options={{ title: "Home" }}
             name="Welcome"

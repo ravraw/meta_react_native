@@ -17,10 +17,10 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       {/* <StackNavigator /> */}
       <TabNavigator />
-      <Footer />
+      {/* <Footer /> */}
     </View>
   );
 };
