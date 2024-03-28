@@ -10,6 +10,7 @@ import WelcomeScreen from "./screens/WelcomeScreen";
 import StackNavigator from "./screens/StackNavigator";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import DrawerNavigator from "./screens/DrawerNavigator";
 
 const App = () => {
   const colorScheme = useColorScheme();
@@ -17,10 +18,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      {/* <Header /> */}
-      {/* <StackNavigator /> */}
       <TabNavigator />
-      {/* <Footer /> */}
     </View>
   );
 };
