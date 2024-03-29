@@ -56,16 +56,11 @@ const renderSectionHeader = ({ section: { title } }) => (
 );
 const keyExtractor = (item, i) => item + i;
 
-const MenuItemsList = () => {
-  const [showMenu, setShowMenu] = useState(false);
+const MenuItemsList = ({ menu }) => {
   return (
     <View style={styles.container}>
-      {/* <Pressable onPress={() => setShowMenu(!showMenu)} style={styles.button}>
-        <Text style={styles.buttonText}>{showMenu ? "Home" : "Show Menu"}</Text>
-      </Pressable> */}
-      {/* {showMenu && ( */}
       <SectionList
-        sections={menuItemsToDisplay}
+        sections={menu}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         renderSectionHeader={renderSectionHeader}

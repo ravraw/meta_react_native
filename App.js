@@ -4,13 +4,7 @@ import {
   useDeviceOrientation,
   useAppState,
 } from "@react-native-community/hooks";
-import { NavigationContainer } from "@react-navigation/native";
 import TabNavigator from "./screens/TabNavigator";
-import WelcomeScreen from "./screens/WelcomeScreen";
-import StackNavigator from "./screens/StackNavigator";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import DrawerNavigator from "./screens/DrawerNavigator";
 
 const App = () => {
   const colorScheme = useColorScheme();

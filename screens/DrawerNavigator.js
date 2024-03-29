@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import WelcomeScreen from "./WelcomeScreen";
 import ProfileScreen from "./ProfileScreen";
-import MenuItemsList from "../components/MenuItemsList";
+import MenuScreen from "./MenuScreen";
 import LoginScreen from "./LoginScreen";
 import FeedbackScreen from "./FeedbackScreen";
 
@@ -17,7 +17,7 @@ const DrawerNavigator = () => {
           name="Welcome"
           component={WelcomeScreen}
         />
-        <Screen name="Menu" component={MenuItemsList} />
+        <Screen name="Menu" component={MenuScreen} />
         <Screen name="Login" component={LoginScreen} />
         <Screen name="Feedback" component={FeedbackScreen} />
         <Screen name="Profile" component={ProfileScreen} />
