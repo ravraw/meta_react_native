@@ -8,6 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import MenuItem from "./MenuItem";
+import Footer from "./Footer";
 
 const renderItem = ({ item: { name, price } }) => (
   <MenuItem name={name} price={price} />
@@ -30,7 +31,7 @@ const MenuItemsList = ({ menu }) => {
         ListHeaderComponent={() => (
           <Text style={styles.subheading}> MENU </Text>
         )}
-        ListFooterComponent={() => <Text>"--------- END -----------"</Text>}
+        ListFooterComponent={() => <Footer />}
       />
     </View>
   );
