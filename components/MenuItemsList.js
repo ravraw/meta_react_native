@@ -1,12 +1,5 @@
-import React, { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  SectionList,
-  Text,
-  Pressable,
-  FlatList,
-} from "react-native";
+import React from "react";
+import { View, StyleSheet, SectionList, Text } from "react-native";
 import MenuItem from "./MenuItem";
 import Footer from "./Footer";
 
@@ -28,9 +21,9 @@ const MenuItemsList = ({ menu }) => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         renderSectionHeader={renderSectionHeader}
-        ListHeaderComponent={() => (
-          <Text style={styles.subheading}> MENU </Text>
-        )}
+        // ListHeaderComponent={() => (
+        //   <Text style={styles.subheading}> MENU </Text>
+        // )}
         ListFooterComponent={() => <Footer />}
       />
     </View>
