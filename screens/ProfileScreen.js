@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Text, StyleSheet, View } from "react-native";
 import Constants from "expo-constants";
 import { Switch } from "react-native-paper";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import useUpdate from "../hooks/useUpdate";
 
 const ProfileScreen = ({ navigation }) => {
   const defaultPreferences = {
@@ -10,6 +12,40 @@ const ProfileScreen = ({ navigation }) => {
     latestNews: false,
   };
   const [preferences, setPreferences] = useState(defaultPreferences);
+
+  useEffect(() => {
+    // Populating preferences from storage using AsyncStorage.multiGet
+    (async () => {
+      try {
+        const values = await AsyncStorage.multiGet(Object.keys(preferences));
+        const initialState = values.reduce((acc, curr) => {
+          // Every item in the values array is itself an array with a string key and a stringified value, i.e ['pushNotifications', 'false']
+          acc[curr[0]] = JSON.parse(curr[1]);
+          return acc;
+        }, {});
+        setPreferences(initialState);
+      } catch (e) {
+        Alert.alert(`An error occurred: ${e.message}`);
+      }
+    })();
+  }, []);
+
+  // This effect only runs when the preferences state updates, excluding initial mount
+  useUpdate(() => {
+    (async () => {
+      // Every time there is an update on the preference state, we persist it on storage
+      // The exercise requierement is to use multiSet API
+      const keyValues = Object.entries(preferences).map((entry) => {
+        return [entry[0], String(entry[1])];
+      });
+      try {
+        await AsyncStorage.multiSet(keyValues);
+      } catch (e) {
+        Alert.alert(`An error occurred: ${e.message}`);
+      }
+    })();
+  }, [preferences]);
+
   const updateState = (key) => () =>
     setPreferences((prevState) => ({
       ...prevState,
@@ -20,21 +56,21 @@ const ProfileScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.header}>Account Preferences</Text>
       <View style={styles.row}>
-        <Text>Push notifications</Text>
+        <Text style={styles.text}>Push notifications</Text>
         <Switch
           value={preferences.pushNotifications}
           onValueChange={updateState("pushNotifications")}
         />
       </View>
       <View style={styles.row}>
-        <Text>Marketing emails</Text>
+        <Text style={styles.text}>Marketing emails</Text>
         <Switch
           value={preferences.emailMarketing}
           onValueChange={updateState("emailMarketing")}
         />
       </View>
       <View style={styles.row}>
-        <Text>Latest news</Text>
+        <Text style={styles.text}>Latest news</Text>
         <Switch
           value={preferences.latestNews}
           onValueChange={updateState("latestNews")}
@@ -55,6 +91,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 16,
+  },
+  text: {
+    fontSize: 18,
   },
   header: {
     margin: 24,
