@@ -21,9 +21,6 @@ const MenuItemsList = ({ menu }) => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         renderSectionHeader={renderSectionHeader}
-        // ListHeaderComponent={() => (
-        //   <Text style={styles.subheading}> MENU </Text>
-        // )}
         ListFooterComponent={() => <Footer />}
       />
     </View>
