@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, SafeAreaView, useColorScheme, View } from "react-native";
-import {
-  useDeviceOrientation,
-  useAppState,
-} from "@react-native-community/hooks";
+import { StyleSheet, useColorScheme, View } from "react-native";
 import TabNavigator from "./screens/TabNavigator";
 
 const App = () => {
