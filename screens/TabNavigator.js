@@ -1,12 +1,10 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, useColorScheme, View } from "react-native";
+import { StyleSheet, SafeAreaView, useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import WelcomeScreen from "./WelcomeScreen";
 import ProfileScreen from "./ProfileScreen";
 import MenuScreen from "./MenuScreen";
-import LoginScreen from "./LoginScreen";
-import FeedbackScreen from "./FeedbackScreen";
 import { Ionicons } from "@expo/vector-icons";
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -44,8 +42,6 @@ const TabNavigator = () => {
             component={WelcomeScreen}
           />
           <Screen name="Menu" component={MenuScreen} />
-          {/* <Screen name="Login" component={LoginScreen} />
-          <Screen name="Feedback" component={FeedbackScreen} /> */}
           <Screen name="Profile" component={ProfileScreen} />
         </Navigator>
       </NavigationContainer>
