@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { View, Text, ActivityIndicator } from "react-native";
 import MenuItemsList from "../components/MenuItemsList";
 import { menuItems } from "./helper/menuData";
 
@@ -14,7 +13,6 @@ const MenuScreen = () => {
         "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu-items-by-category.json"
       );
       const json = await response.json();
-      //   setMenu(json.menu);
       setMenu(menuItems);
     } catch (error) {
       console.error(error);

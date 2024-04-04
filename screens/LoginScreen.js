@@ -65,8 +65,6 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     alignSelf: "center",
     marginVertical: 50,
-    // borderWidth: 1,
-    // borderColor: "red",
   },
   regularText: {
     fontSize: 18,
