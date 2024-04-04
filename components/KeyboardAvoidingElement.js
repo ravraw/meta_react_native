@@ -7,24 +7,6 @@ import {
 } from "react-native";
 
 const KeyboardAvoidingElement = ({ children }) => {
-  // const [keyboardHeight, setKeyboardHeight] = useState(0);
-
-  // Not being used
-  // useEffect(() => {
-  //   const showSubscription = Keyboard.addListener(
-  //     "keyboardDidShow",
-  //     ({ endCoordinates }) => setKeyboardHeight(endCoordinates.height)
-  //   );
-  //   const hideSubscription = Keyboard.addListener("keyboardDidHide", () =>
-  //     setKeyboardHeight(0)
-  //   );
-
-  //   return () => {
-  //     showSubscription.remove();
-  //     hideSubscription.remove();
-  //   };
-  // }, []);
-
   return (
     <KeyboardAvoidingView
       style={styles.container}
