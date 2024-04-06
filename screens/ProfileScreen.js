@@ -30,11 +30,8 @@ const ProfileScreen = ({ navigation }) => {
     })();
   }, []);
 
-  // This effect only runs when the preferences state updates, excluding initial mount
   useUpdate(() => {
     (async () => {
-      // Every time there is an update on the preference state, we persist it on storage
-      // The exercise requierement is to use multiSet API
       const keyValues = Object.entries(preferences).map((entry) => {
         return [entry[0], String(entry[1])];
       });
